@@ -28,10 +28,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-starship_precmd() {
-  eval "$(starship init zsh)"
-}
-precmd_functions+=(starship_precmd)
+eval "$(starship init zsh)"
 
 FNM_PATH="/root/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
