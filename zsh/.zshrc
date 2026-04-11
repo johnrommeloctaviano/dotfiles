@@ -43,3 +43,33 @@ bindkey -M viins '^I' menu-complete
 bindkey -M viins '^[[Z' reverse-menu-complete
 bindkey -M viins '^[[A' menu-select
 bindkey -M viins '^[[B' menu-select
+
+alias dot="cd ~/.dotfiles"
+alias vdot="nvim ~/.dotfiles"
+
+alias ezsh="nvim ~/.dotfiles/zsh/.zshrc"
+alias envim="nvim ~/.dotfiles/nvim"
+alias etmux="nvim ~/.dotfiles/tmux/.tmux.conf"
+alias ezellij="nvim ~/.dotfiles/zellij"
+alias egit="nvim ~/.dotfiles/git"
+alias estarship="nvim ~/.dotfiles/starship"
+
+alias rzsh="source ~/.zshrc"
+alias szsh="exec zsh"
+
+alias v="nvim"
+alias lg="lazygit"
+alias ld="lazydocker"
+alias t="tmux"
+alias z="zellij"
+
+alias g="git"
+alias gs="git status"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+alias gl="git pull"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias c="clear"
