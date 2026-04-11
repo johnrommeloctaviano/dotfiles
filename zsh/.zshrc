@@ -1,3 +1,7 @@
+autoload -Uz compinit
+
+compinit -C
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -77,9 +81,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_CUSTOM/plugins/zsh-vi-mode/zsh-vi-mode.zsh
 
 # User configuration
 
@@ -115,8 +123,6 @@ source $ZSH/oh-my-zsh.sh
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-source /usr/share/nvm/init-nvm.sh
-
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 [ -f ~/.secrets ] && source ~/.secrets
@@ -129,16 +135,25 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/p10k/.p10k.zsh.
 # [[ ! -f ~/.dotfiles/p10k/.p10k.zsh ]] || source ~/.dotfiles/p10k/.p10k.zsh
 
-eval "$(starship init zsh)"
+starship_precmd() {
+  eval "$(starship init zsh)"
+}
+
+precmd_functions+=(starship_precmd)
 
 # fnm
 FNM_PATH="/root/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
-  eval "$(fnm env --shell zsh)"
+  fnm_lazy() {
+    eval "$(fnm env --shell zsh)"
+  }
+  alias node='fnm_lazy; node'
+  alias npm='fnm_lazy; npm'
+  alias npx='fnm_lazy; npx'
 fi
