@@ -19,7 +19,11 @@ source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-eval "$(starship init zsh)"
+starship_precmd() {
+  unset -f starship_precmd
+  eval "$(starship init zsh)"
+}
+precmd_functions+=(starship_precmd)
 
 FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
