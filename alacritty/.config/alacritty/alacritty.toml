@@ -1,0 +1,72 @@
+# --- OMARCHY THEME (kept as primary source of colors) ---
+general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
+
+# --- ENVIRONMENT ---
+[env]
+TERM = "xterm-256color"
+WINIT_UNIX_BACKEND = "x11"
+
+# --- TERMINAL ---
+[terminal]
+osc52 = "CopyPaste"
+
+# [terminal.shell]
+# program = "wsl.exe"
+# args = ["~"]
+
+# --- SCROLLING ---
+[scrolling]
+history = 5000
+
+# --- FONT (unified to avoid glyph + spacing issues) ---
+[font]
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
+bold   = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+size = 11
+
+# --- WINDOW ---
+[window]
+decorations = "None"
+opacity = 1.0
+dimensions = { columns = 120, lines = 30 }
+
+# balanced padding (fixes visual breaks + keeps omarchy spacing feel)
+padding = { x = 14, y = 8 }
+
+# --- KEYBINDS ---
+[keyboard]
+bindings = [
+  { key = "Insert", mods = "Shift", action = "Paste" },
+  { key = "Insert", mods = "Control", action = "Copy" },
+  { key = "Return", mods = "Shift", chars = "\u001B\r" }
+]
+
+# --- FALLBACK COLORS (only used if omarchy theme fails to load) ---
+[colors.primary]
+background = "#0d1117"
+foreground = "#c9d1d9"
+
+[colors.cursor]
+text = "#0d1117"
+cursor = "#58a6ff"
+
+[colors.normal]
+black   = "#161b22"
+red     = "#f85149"
+green   = "#3fb950"
+yellow  = "#d29922"
+blue    = "#58a6ff"
+magenta = "#bc8cff"
+cyan    = "#39c5cf"
+white   = "#c9d1d9"
+
+[colors.bright]
+black   = "#30363d"
+red     = "#ff7b72"
+green   = "#56d364"
+yellow  = "#e3b341"
+blue    = "#79c0ff"
+magenta = "#d2a8ff"
+cyan    = "#56d4dd"
+white   = "#f0f6fc"
