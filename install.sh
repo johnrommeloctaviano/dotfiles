@@ -25,7 +25,7 @@ BASE_PACKAGES=(
   yay
   pnpm
   cargo
-  nvm
+  fnm
   pyenv
   rustc
   fastfetch
