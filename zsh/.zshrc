@@ -4,6 +4,7 @@ compinit -C
 zmodload zsh/complist
 
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/.local/bin:$PATH"
 
 CASE_SENSITIVE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -32,6 +33,7 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   fnm_lazy() {
     eval "$(fnm env --shell zsh)"
+    eval "$(fnm env --use-on-cd --shell zsh)"
   }
   alias node='fnm_lazy; node'
   alias npm='fnm_lazy; npm'
@@ -75,3 +77,4 @@ alias gl="git pull"
 alias ..="cd .."
 alias ...="cd ../.."
 alias c="clear"
+
