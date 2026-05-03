@@ -3,6 +3,9 @@ compinit -C
 
 zmodload zsh/complist
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -14,7 +17,10 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH_CUSTOM/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 [ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ] && export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 [ -f ~/.secrets ] && source ~/.secrets
@@ -77,4 +83,3 @@ alias gl="git pull"
 alias ..="cd .."
 alias ...="cd ../.."
 alias c="clear"
-
