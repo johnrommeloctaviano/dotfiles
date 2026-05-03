@@ -21,6 +21,8 @@ source $ZSH_CUSTOM/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plu
 zstyle ':completion:*' menu select
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' special-dirs true
 
 [ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ] && export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 [ -f ~/.secrets ] && source ~/.secrets
