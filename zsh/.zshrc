@@ -1,3 +1,7 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 autoload -Uz compinit
 compinit -C
 
@@ -13,9 +17,11 @@ CASE_SENSITIVE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 KEYTIMEOUT=1
 
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 zstyle ':completion:*' menu select
@@ -29,12 +35,6 @@ zstyle ':completion:*' special-dirs true
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-
-starship_precmd() {
-  unset -f starship_precmd
-  eval "$(starship init zsh)"
-}
-precmd_functions+=(starship_precmd)
 
 FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
@@ -85,3 +85,5 @@ alias gl="git pull"
 alias ..="cd .."
 alias ...="cd ../.."
 alias c="clear"
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
