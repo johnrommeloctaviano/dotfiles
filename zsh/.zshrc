@@ -23,12 +23,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
-zstyle ':completion:*' menu select
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*' special-dirs true
+source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 [ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ] && export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 [ -f ~/.secrets ] && source ~/.secrets
