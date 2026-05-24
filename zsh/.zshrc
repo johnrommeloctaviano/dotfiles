@@ -70,6 +70,12 @@ alias ld="lazydocker"
 alias t="tmux"
 alias z="zellij"
 
+alias p="pnpm"
+
+alias nv="node -v"
+
+alias fu="fnm use"
+
 alias g="git"
 alias gs="git status"
 alias ga="git add ."
