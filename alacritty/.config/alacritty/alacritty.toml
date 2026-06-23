@@ -23,7 +23,7 @@ history = 5000
 normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
 bold   = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
-size = 11
+size = 12
 
 # --- WINDOW ---
 [window]
