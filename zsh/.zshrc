@@ -43,7 +43,7 @@ if [ -d "$FNM_PATH" ]; then
   alias npx='fnm_lazy; npx'
 fi
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 bindkey -v
 bindkey -M viins '^I' menu-complete
