@@ -44,7 +44,7 @@ bindings = [
 
 # --- FALLBACK COLORS (only used if omarchy theme fails to load) ---
 [colors.primary]
-background = "#0d1117"
+background = "#0a0c10"
 foreground = "#c9d1d9"
 
 [colors.cursor]

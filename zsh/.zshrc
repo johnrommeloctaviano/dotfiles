@@ -88,3 +88,5 @@ alias ...="cd ../.."
 alias c="clear"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+JIRA_API_TOKEN=ATATT3xFfGF0TwjWstzw8i3MgGaOSE5g81HU0gSotUPNRjP4zUKp5f_48_geY0MPatI_4p1msSs3y5UkdMeBxh9nPRq8nQ1jzqhQftujQf9ybZj2zgEPuPB88U3Gf0jzdNk0feHbKHzYpuGueM3kkHR3lMVVnkZQAgGc24-FbSx2L7Zd2P0spYc=C1D531CF
