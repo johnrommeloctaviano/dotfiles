@@ -49,7 +49,7 @@ foreground = "#c9d1d9"
 
 [colors.cursor]
 text = "#0d1117"
-cursor = "#58a6ff"
+cursor = "#ffffff"
 
 [colors.normal]
 black   = "#161b22"
