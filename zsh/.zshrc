@@ -31,17 +31,10 @@ source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-FNM_PATH="$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  fnm_lazy() {
-    eval "$(fnm env --shell zsh)"
-    eval "$(fnm env --use-on-cd --shell zsh)"
-  }
-  alias node='fnm_lazy; node'
-  alias npm='fnm_lazy; npm'
-  alias npx='fnm_lazy; npx'
-fi
+export FNM_PATH="$HOME/.local/share/fnm"
+export PATH="$FNM_PATH:$PATH"
+
+eval "$("$FNM_PATH/fnm" env --use-on-cd --shell zsh)"
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
